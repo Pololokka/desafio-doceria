@@ -205,6 +205,9 @@ html {
 
 .App {
   padding: 0 5em;
+}
+
+.App-cards__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
