@@ -1,42 +1,278 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Paytone+One&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: inherit;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  padding: 0;
+  border: none;
+  background-color: unset;
+}
+
+input {
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+textarea {
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+select {
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+/*CSS Global*/
+
+:root {
+  --fonte-principal: "Alfa Slab One", cursive;
+  --fonte-geral: "Paytone One", sans-serif;
+
+  --cor-fundo: #fdff9d;
+
+  --cor-fonte: #0a0738;
+  --cor-hover-1: #892990;
+  --cor-hover-2: #ed217a;
+
+  --cor-borda: #0a0738;
+
+  --cor-btn: #892990;
+  --cor-fonte-btn-hover: #6dbffa;
+
+  --cor-card: #fa7f36;
+  --cor-sombra-card-1: #ed217a;
+
+  --cor-card-head: #6dbffa;
+  --cor-card-2: #54f334;
+  --cor-card-3: #fbe435;
+
+  --tamanho-fonte-titulo: 3rem;
+  --tamanho-fonte-subtitulo: 2rem;
+  --tamanho-fonte-texto: 1.5rem;
+}
+
+html {
+  background-color: var(--cor-fundo);
   text-align: center;
+  padding: 0.5em;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App {
+  padding: 0 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titulo {
+  font-family: var(--fonte-principal);
+  color: var(--cor-fonte);
+  font-size: var(--tamanho-fonte-titulo);
+  transition: 200ms;
+  padding: 0.5em;
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.titulo-hover:hover {
+  text-shadow: -4px 2px var(--cor-hover-1), -8px 4px var(--cor-hover-2);
 }
 
-.card {
-  padding: 2em;
+.subtitulo {
+  font-family: var(--fonte-geral);
+  color: var(--cor-fonte);
+  font-size: var(--tamanho-fonte-subtitulo);
+  transition: 200ms;
+  padding: 0.5em;
+  display: inline-block;
 }
 
-.read-the-docs {
-  color: #888;
+.subtitulo-hover:hover {
+  text-shadow: -4px 2px var(--cor-hover-1);
+}
+
+.texto {
+  font-family: var(--fonte-geral);
+  color: var(--cor-fonte);
+  font-size: var(--tamanho-fonte-texto);
+  transition: 200ms;
+  padding: 0.5em;
+  display: inline-block;
+}
+
+.texto-hover:hover {
+  text-shadow: -2px 1px var(--cor-hover-2);
+  transition: 200ms;
+}
+
+.btn__geral {
+  background-color: var(--cor-btn);
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 1em;
+  transition: 200ms;
+  width: auto;
+}
+
+.btn__geral:hover {
+  color: var(--cor-fonte-btn-hover);
+  box-shadow: -4px 2px var(--cor-hover-2);
+}
+
+.btn__geral:active {
+  transform: scale(0.9);
+}
+
+.input__geral {
+  border-radius: 15px;
+  border: 4px solid var(--cor-borda);
+  width: 50%;
+  margin: 0.5em;
 }

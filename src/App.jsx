@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+
+import Card from "./Components/Card/Index";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <main className="App">
+        <Card
+          title="Super Troufer"
+          text="Doce chocolate trufado com leite condesado e limão siciliano"
+          price="2,00"
+        />
+        <Card
+          title="Amor Proibido"
+          text="Doce de leite com recheio de maracujá com sementes cristalizadas de maracujá"
+          price="3,00"
+        />
+        <Card
+          title="Rainha dos Doces"
+          text="Bolacha com paleta italiana de (morango, limão ou laranja) e mel"
+          price="4,50"
+        />
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;
