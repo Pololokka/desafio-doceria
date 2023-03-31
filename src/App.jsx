@@ -2,26 +2,12 @@ import "./App.css";
 
 import Card from "./Components/Card/Index";
 import Button from "./Components/Button/Index";
-import Modal from "./Components/Modal/Index";
-import { useState } from "react";
+import ContModal from "./Components/ContModal/Index";
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
-
   return (
     <>
-      <input
-        type="button"
-        value="mostrar modal"
-        onClick={() => setShowModal(!showModal)}
-      />
-      <Modal
-        title="modal teste"
-        text="qualquer coisa aqui"
-        btnValue="Fechar"
-        show={showModal}
-        setShow={setShowModal}
-      />
+      <ContModal />
       <main className="App">
         <h1 className="titulo titulo-hover">Confissões Da Minha Dieta</h1>
         <div className="App-buttons__container">
