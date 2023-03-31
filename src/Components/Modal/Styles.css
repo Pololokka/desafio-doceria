@@ -1,0 +1,24 @@
+.modal__container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__content {
+  width: auto;
+  background-color: var(--cor-card);
+  padding: 1.5em 1em;
+  border-radius: 15px;
+  box-shadow: -5px 5px var(--cor-sombra-card-1);
+}
+
+.modal__body {
+  padding: 2em 0;
+}
