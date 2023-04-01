@@ -4,13 +4,13 @@ const ModalSingle = ({
   title,
   name,
   text,
+  type,
+  text2,
   btnValue1,
   btnValue2,
   show,
   setShow,
-  showModal1,
   setShowModal1,
-  showModal2,
   setShowModal2,
 }) => {
   if (!show) {
@@ -27,7 +27,8 @@ const ModalSingle = ({
           <label htmlFor={name} className="texto texto-hover">
             {text}
           </label>
-          <input type="text" name={name} className="texto input__geral" />
+          <input type={type} name={name} className="texto input__geral" />
+          <p className="texto">{text2}</p>
         </div>
         <div className="modal__footer">
           <input

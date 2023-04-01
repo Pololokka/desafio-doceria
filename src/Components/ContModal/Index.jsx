@@ -14,16 +14,19 @@ const ContModal = () => {
 
   const step = [
     {
-      titleTest: "teste obj 1",
-      textTest: "texto teste obj 1",
+      id: 0,
+      titleTest: "Super Troufer - R$ 2,00",
+      textTest: "Esolha quantos doces quer pedir!",
     },
     {
-      titleTest: "teste obj 2",
-      textTest: "texto teste obj 2",
+      id: 1,
+      titleTest: "Amor Proibido - R$ 3,00",
+      textTest: "Esolha quantos doces quer pedir!",
     },
     {
-      titleTest: "teste obj 3",
-      textTest: "texto teste obj 3",
+      id: 2,
+      titleTest: "Rainha dos Doces - R$ 4,50",
+      textTest: "Esolha quantos doces quer pedir!",
     },
   ];
 
@@ -48,11 +51,13 @@ const ContModal = () => {
       />
 
       <ModalSingle
-        title="teste modal single"
+        title="Vamos começar seu pedido!"
         name="userName"
-        text="texto teste modal single"
-        btnValue1="modal single"
-        btnValue2="modal multi"
+        text="Insira o seu nome: "
+        type="text"
+        text2='E como gostaria de fazer seu pedido? Caso queira selecionar os doces, aperte em "Escolher"; caso queira uma seleção otimizada para a maior quantidade de doces, aperte em "Randomizar"!'
+        btnValue1="Randomizar"
+        btnValue2="Escolher"
         show={showModalS}
         setShow={setShowModalS}
         showModal1={showModalS2}
@@ -62,17 +67,20 @@ const ContModal = () => {
       />
 
       <ModalSingle
-        title="teste modal single 2"
+        title="Escolha Randomizada"
         name="random"
-        text="texto teste modal single 2"
-        btnValue1="fechar"
-        btnValue2="test"
+        text="Insira quanto dinheiro gostaria de gastar, e a máquina vai escolher seus doces!"
+        type="number"
+        btnValue1="Fechar"
+        btnValue2="Concluir"
         show={showModalS2}
         setShow={setShowModalS2}
       />
 
       <ModalMulti
         show={showModalM}
+        type="number"
+        name="candy"
         setShow={setShowModalM}
         step={step}
         currStep={currStep}

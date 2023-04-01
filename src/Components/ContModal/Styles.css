@@ -17,8 +17,13 @@
   padding: 1.5em 1em;
   border-radius: 15px;
   box-shadow: -5px 5px var(--cor-sombra-card-1);
+  max-width: 50%;
 }
 
 .modal__body {
   padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

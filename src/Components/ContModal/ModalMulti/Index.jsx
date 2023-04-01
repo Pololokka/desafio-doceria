@@ -1,6 +1,14 @@
 import "../Styles.css";
 
-const ModalMulti = ({ show, setShow, step, currStep, setCurrStep }) => {
+const ModalMulti = ({
+  show,
+  name,
+  type,
+  setShow,
+  step,
+  currStep,
+  setCurrStep,
+}) => {
   if (!show) {
     return null;
   }
@@ -15,7 +23,15 @@ const ModalMulti = ({ show, setShow, step, currStep, setCurrStep }) => {
             <h3 className="subtitulo subtitulo-hover">{element.titleTest}</h3>
           </div>
           <div className="modal__body">
-            <p className="texto">{element.textTest}</p>
+            <label htmlFor={name + element.id} className="texto">
+              {element.textTest}
+            </label>
+            <input
+              type={type}
+              name={name}
+              className="texto input__geral"
+              min={0}
+            />
           </div>
           <div className="modal__footer">
             <input
