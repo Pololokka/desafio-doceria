@@ -46,6 +46,7 @@ const ContModal = ({
         text2='E como gostaria de fazer seu pedido? Caso queira selecionar os doces, aperte em "Escolher"; caso queira uma seleção otimizada para a maior quantidade de doces, aperte em "Randomizar"!'
         btnValue1="Randomizar"
         btnValue2="Escolher"
+        btn2Need={true}
         show={showModalS}
         setShow={setShowModalS}
         showModal1={showModalS2}
@@ -62,6 +63,7 @@ const ContModal = ({
         type="number"
         btnValue1="Fechar"
         btnValue2="Concluir"
+        btn2Need={true}
         show={showModalS2}
         setShow={setShowModalS2}
       />
@@ -80,8 +82,8 @@ const ContModal = ({
         title="teste fechar"
         text2="p do teste fechar"
         btnValue1="fechar"
-        btnValue2="pensar num jeito de não mostrar esse botão"
         inputNeed={false}
+        btn2Need={false}
         show={showModalEnd}
         setShow={setShowModalEnd}
       />

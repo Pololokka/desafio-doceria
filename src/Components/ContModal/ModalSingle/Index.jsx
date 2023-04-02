@@ -8,6 +8,7 @@ const ModalSingle = ({
   type,
   text2,
   btnValue1,
+  btn2Need,
   btnValue2,
   show,
   setShow,
@@ -45,17 +46,19 @@ const ModalSingle = ({
               }
             }}
           />
-          <input
-            type="button"
-            value={btnValue2}
-            className="texto btn__geral"
-            onClick={() => {
-              setShow(!show);
-              if (name === "userName") {
-                setShowModal2(true);
-              }
-            }}
-          />
+          {btn2Need && (
+            <input
+              type="button"
+              value={btnValue2}
+              className="texto btn__geral"
+              onClick={() => {
+                setShow(!show);
+                if (name === "userName") {
+                  setShowModal2(true);
+                }
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
