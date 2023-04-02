@@ -215,6 +215,13 @@ html {
   gap: 1em;
 }
 
+.individual-cards__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .titulo {
   font-family: var(--fonte-principal);
   color: var(--cor-fonte);

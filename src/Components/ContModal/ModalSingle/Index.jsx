@@ -4,6 +4,7 @@ const ModalSingle = ({
   title,
   name,
   text,
+  inputNeed,
   type,
   text2,
   btnValue1,
@@ -27,7 +28,9 @@ const ModalSingle = ({
           <label htmlFor={name} className="texto texto-hover">
             {text}
           </label>
-          <input type={type} name={name} className="texto input__geral" />
+          {inputNeed && (
+            <input type={type} name={name} className="texto input__geral" />
+          )}
           <p className="texto">{text2}</p>
         </div>
         <div className="modal__footer">

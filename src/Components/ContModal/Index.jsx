@@ -5,11 +5,16 @@ import ModalMulti from "./ModalMulti/Index";
 
 import { useState } from "react";
 
-const ContModal = () => {
-  const [showModalS, setShowModalS] = useState(false);
-  const [showModalS2, setShowModalS2] = useState(false);
-  const [showModalM, setShowModalM] = useState(false);
-
+const ContModal = ({
+  showModalS,
+  setShowModalS,
+  showModalS2,
+  setShowModalS2,
+  showModalM,
+  setShowModalM,
+  showModalEnd,
+  setShowModalEnd,
+}) => {
   const [currStep, setCurrStep] = useState(0);
 
   const step = [
@@ -32,28 +37,11 @@ const ContModal = () => {
 
   return (
     <>
-      <input
-        type="button"
-        value="mostrar modal single"
-        onClick={() => setShowModalS(!showModalS)}
-      />
-
-      <input
-        type="button"
-        value="mostrar modal single 2"
-        onClick={() => setShowModalS2(!showModalS2)}
-      />
-
-      <input
-        type="button"
-        value="mostrar modal multi"
-        onClick={() => setShowModalM(!showModalM)}
-      />
-
       <ModalSingle
         title="Vamos começar seu pedido!"
         name="userName"
         text="Insira o seu nome: "
+        inputNeed={true}
         type="text"
         text2='E como gostaria de fazer seu pedido? Caso queira selecionar os doces, aperte em "Escolher"; caso queira uma seleção otimizada para a maior quantidade de doces, aperte em "Randomizar"!'
         btnValue1="Randomizar"
@@ -70,6 +58,7 @@ const ContModal = () => {
         title="Escolha Randomizada"
         name="random"
         text="Insira quanto dinheiro gostaria de gastar, e a máquina vai escolher seus doces!"
+        inputNeed={true}
         type="number"
         btnValue1="Fechar"
         btnValue2="Concluir"
@@ -85,6 +74,16 @@ const ContModal = () => {
         step={step}
         currStep={currStep}
         setCurrStep={setCurrStep}
+      />
+
+      <ModalSingle
+        title="teste fechar"
+        text2="p do teste fechar"
+        btnValue1="fechar"
+        btnValue2="pensar num jeito de não mostrar esse botão"
+        inputNeed={false}
+        show={showModalEnd}
+        setShow={setShowModalEnd}
       />
     </>
   );
