@@ -46,9 +46,11 @@ const ModalSingle = ({
               userName !== "" ? "texto btn__geral" : "texto btn__inactive"
             }
             onClick={() => {
-              setShow(!show);
-              if (name === "userName") {
-                setShowModal1(true);
+              if (userName !== "") {
+                setShow(!show);
+                if (name === "userName") {
+                  setShowModal1(true);
+                }
               }
             }}
           />
@@ -61,9 +63,11 @@ const ModalSingle = ({
                 userName !== "" ? "texto btn__geral" : "texto btn__inactive"
               }
               onClick={() => {
-                setShow(!show);
-                if (name === "userName") {
-                  setShowModal2(true);
+                if (userName !== "") {
+                  setShow(!show);
+                  if (name === "userName") {
+                    setShowModal2(true);
+                  }
                 }
               }}
             />
