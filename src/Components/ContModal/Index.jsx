@@ -14,6 +14,8 @@ const ContModal = ({
   setShowModalM,
   showModalEnd,
   setShowModalEnd,
+  candy,
+  handleOnChangeCandy,
 }) => {
   const [currStep, setCurrStep] = useState(0);
 
@@ -76,6 +78,8 @@ const ContModal = ({
         step={step}
         currStep={currStep}
         setCurrStep={setCurrStep}
+        candy={candy}
+        handleOnChangeCandy={handleOnChangeCandy}
       />
 
       <ModalSingle

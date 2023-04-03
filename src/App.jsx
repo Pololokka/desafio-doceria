@@ -6,11 +6,19 @@ import ContModal from "./Components/ContModal/Index";
 
 import { useState } from "react";
 
+const initialCandy = {
+  candy0: 0,
+  candy1: 0,
+  candy2: 0,
+};
+
 function App() {
   const [showModalS, setShowModalS] = useState(false);
   const [showModalS2, setShowModalS2] = useState(false);
   const [showModalM, setShowModalM] = useState(false);
   const [showModalEnd, setShowModalEnd] = useState(false);
+
+  const [candy, setCandy] = useState(initialCandy);
 
   const handleStart = () => {
     setShowModalS(!showModalS);
@@ -18,6 +26,12 @@ function App() {
 
   const handleEnd = () => {
     setShowModalEnd(!showModalEnd);
+  };
+
+  const handleOnChangeCandy = (event) => {
+    const name = event.target.name;
+    setCandy({ ...candy, [name]: event.target.value });
+    console.log(candy);
   };
 
   return (
@@ -31,6 +45,9 @@ function App() {
         setShowModalM={setShowModalM}
         showModalEnd={showModalEnd}
         setShowModalEnd={setShowModalEnd}
+        //lógica de add doce
+        candy={candy}
+        handleOnChangeCandy={handleOnChangeCandy}
       />
       <main className="App">
         <h1 className="titulo titulo-hover">Confissões Da Minha Dieta</h1>

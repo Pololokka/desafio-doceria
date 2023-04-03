@@ -8,6 +8,8 @@ const ModalMulti = ({
   step,
   currStep,
   setCurrStep,
+  candy,
+  handleOnChangeCandy,
 }) => {
   if (!show) {
     return null;
@@ -28,9 +30,11 @@ const ModalMulti = ({
             </label>
             <input
               type={type}
-              name={name}
+              name={name + element.id}
               className="texto input__geral"
+              value={candy[name + element.id] || ""}
               min={0}
+              onChange={handleOnChangeCandy}
             />
           </div>
           <div className="modal__footer">
