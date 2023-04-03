@@ -14,6 +14,7 @@ const ContModal = ({
   setShowModalM,
   showModalEnd,
   setShowModalEnd,
+  userName,
   candy,
   handleOnChangeCandy,
 }) => {
@@ -49,6 +50,7 @@ const ContModal = ({
         btnValue1="Randomizar"
         btnValue2="Escolher"
         btn2Need={true}
+        userName={userName}
         show={showModalS}
         setShow={setShowModalS}
         showModal1={showModalS2}

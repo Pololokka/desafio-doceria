@@ -20,12 +20,19 @@ function App() {
 
   const [candy, setCandy] = useState(initialCandy);
 
+  const [userName, setUserName] = useState("");
+
   const handleStart = () => {
     setShowModalS(!showModalS);
   };
 
   const handleEnd = () => {
     setShowModalEnd(!showModalEnd);
+  };
+
+  const handleReset = () => {
+    setCandy(initialCandy);
+    console.log(candy);
   };
 
   const handleOnChangeCandy = (event) => {
@@ -46,6 +53,7 @@ function App() {
         showModalEnd={showModalEnd}
         setShowModalEnd={setShowModalEnd}
         //lógica de add doce
+        userName={userName}
         candy={candy}
         handleOnChangeCandy={handleOnChangeCandy}
       />
@@ -54,7 +62,7 @@ function App() {
         <div className="App-buttons__container">
           <Button title="Fechar Pedido" handleClick={handleEnd} />
           <Button title="Fazer Pedido" handleClick={handleStart} />
-          <Button title="Limpar" />
+          <Button title="Limpar" handleClick={handleReset} />
         </div>
         <div className="App-cards__container">
           <div className="individual-cards__container">

@@ -12,6 +12,7 @@ const ModalSingle = ({
   btnValue2,
   btnName1,
   btnName2,
+  userName,
   show,
   setShow,
   setShowModal1,
@@ -41,7 +42,9 @@ const ModalSingle = ({
             type="button"
             value={btnValue1}
             name={btnName1}
-            className="texto btn__geral"
+            className={
+              userName !== "" ? "texto btn__geral" : "texto btn__inactive"
+            }
             onClick={() => {
               setShow(!show);
               if (name === "userName") {
@@ -53,8 +56,10 @@ const ModalSingle = ({
             <input
               type="button"
               value={btnValue2}
-              name={btnName1}
-              className="texto btn__geral"
+              name={btnName2}
+              className={
+                userName !== "" ? "texto btn__geral" : "texto btn__inactive"
+              }
               onClick={() => {
                 setShow(!show);
                 if (name === "userName") {
