@@ -1,5 +1,7 @@
 import "../Styles.css";
 
+import { useRef } from "react";
+
 const ModalSingle = ({
   title,
   name,
@@ -13,6 +15,8 @@ const ModalSingle = ({
   btnName1,
   btnName2,
   userName,
+  setUserName,
+  modalRef,
   show,
   setShow,
   setShowModal1,
@@ -23,7 +27,7 @@ const ModalSingle = ({
   }
 
   return (
-    <div className="modal__container">
+    <div className="modal__container" ref={modalRef}>
       <div className="modal__content">
         <div className="modal__header">
           <h3 className="subtitulo subtitulo-hover">{title}</h3>
@@ -33,7 +37,13 @@ const ModalSingle = ({
             {text}
           </label>
           {inputNeed && (
-            <input type={type} name={name} className="texto input__geral" />
+            <input
+              type={type}
+              name={name}
+              className="texto input__geral"
+              value={userName || ""}
+              onChange={(event) => setUserName(event.target.value)}
+            />
           )}
           <p className="texto">{text2}</p>
         </div>

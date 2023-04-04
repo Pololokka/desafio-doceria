@@ -20,7 +20,7 @@ function App() {
 
   const [candy, setCandy] = useState(initialCandy);
 
-  const [userName, setUserName] = useState("j");
+  const [userName, setUserName] = useState("");
 
   const handleStart = () => {
     setShowModalS(!showModalS);
@@ -60,6 +60,7 @@ function App() {
         setShowModalEnd={setShowModalEnd}
         //lógica de add doce
         userName={userName}
+        setUserName={setUserName}
         candy={candy}
         handleOnChangeCandy={handleOnChangeCandy}
       />

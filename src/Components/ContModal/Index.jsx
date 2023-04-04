@@ -3,7 +3,7 @@ import "./Styles.css";
 import ModalSingle from "./ModalSingle/Index";
 import ModalMulti from "./ModalMulti/Index";
 
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ContModal = ({
   showModalS,
@@ -15,10 +15,30 @@ const ContModal = ({
   showModalEnd,
   setShowModalEnd,
   userName,
+  setUserName,
   candy,
   handleOnChangeCandy,
 }) => {
   const [currStep, setCurrStep] = useState(0);
+  const modalRef = useRef();
+
+  useEffect(() => {
+    if (showModalS) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [showModalS]);
+
+  const handleClickOutside = (event) => {
+    if (event.target === modalRef.current) {
+      setShowModalS(false);
+    }
+  };
 
   const step = [
     {
@@ -51,6 +71,8 @@ const ContModal = ({
         btnValue2="Escolher"
         btn2Need={true}
         userName={userName}
+        setUserName={setUserName}
+        modalRef={modalRef}
         show={showModalS}
         setShow={setShowModalS}
         showModal1={showModalS2}
