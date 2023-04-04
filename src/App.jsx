@@ -32,13 +32,11 @@ function App() {
 
   const handleReset = () => {
     setCandy(initialCandy);
-    console.log(candy);
   };
 
   const handleOnChangeCandy = (event) => {
     const name = event.target.name;
     setCandy({ ...candy, [name]: event.target.value });
-    console.log(candy);
   };
 
   let priceTotal = (
@@ -61,7 +59,9 @@ function App() {
         //lógica de add doce
         userName={userName}
         setUserName={setUserName}
+        priceTotal={priceTotal}
         candy={candy}
+        setCandy={setCandy}
         handleOnChangeCandy={handleOnChangeCandy}
       />
       <main className="App">

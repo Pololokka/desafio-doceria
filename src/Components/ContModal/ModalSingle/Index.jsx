@@ -21,6 +21,8 @@ const ModalSingle = ({
   setShow,
   setShowModal1,
   setShowModal2,
+  finalModal,
+  setCandy,
 }) => {
   if (!show) {
     return null;
@@ -58,6 +60,14 @@ const ModalSingle = ({
             onClick={() => {
               if (userName !== "") {
                 setShow(!show);
+                if (finalModal) {
+                  setUserName("");
+                  setCandy({
+                    candy0: 0,
+                    candy1: 0,
+                    candy2: 0,
+                  });
+                }
                 if (name === "userName") {
                   setShowModal1(true);
                 }

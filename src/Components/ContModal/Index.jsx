@@ -16,7 +16,9 @@ const ContModal = ({
   setShowModalEnd,
   userName,
   setUserName,
+  priceTotal,
   candy,
+  setCandy,
   handleOnChangeCandy,
 }) => {
   const [currStep, setCurrStep] = useState(0);
@@ -107,13 +109,20 @@ const ContModal = ({
       />
 
       <ModalSingle
-        title="teste fechar"
-        text2="p do teste fechar"
+        title={"Pedido concluído, " + userName + "!"}
+        text2={
+          "Seu total foi de R$" +
+          priceTotal +
+          ". Agora é só aguardar que já já te chamamos pelo nome!"
+        }
         btnValue1="fechar"
         inputNeed={false}
         btn2Need={false}
+        setUserName={setUserName}
         show={showModalEnd}
         setShow={setShowModalEnd}
+        finalModal={true}
+        setCandy={setCandy}
       />
     </>
   );
