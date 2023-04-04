@@ -20,7 +20,7 @@ function App() {
 
   const [candy, setCandy] = useState(initialCandy);
 
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState("j");
 
   const handleStart = () => {
     setShowModalS(!showModalS);
@@ -41,6 +41,12 @@ function App() {
     console.log(candy);
   };
 
+  let priceTotal = (
+    candy.candy2 * 4.5 +
+    candy.candy1 * 3 +
+    candy.candy0 * 2
+  ).toFixed(2);
+
   return (
     <>
       <ContModal
@@ -59,25 +65,37 @@ function App() {
       />
       <main className="App">
         <h1 className="titulo titulo-hover">Confissões Da Minha Dieta</h1>
+        {userName !== "" ? (
+          <p className="subtitulo subtitulo-hover">Bem-vindo/a, {userName}!</p>
+        ) : (
+          <p className="subtitulo subtitulo-hover">Seja bem-vindo!</p>
+        )}
         <div className="App-buttons__container">
           <Button title="Fechar Pedido" handleClick={handleEnd} />
           <Button title="Fazer Pedido" handleClick={handleStart} />
           <Button title="Limpar" handleClick={handleReset} />
         </div>
+
+        <p className="texto texto-hover">Preço total: R$ {priceTotal}</p>
+
         <div className="App-cards__container">
           <div className="individual-cards__container">
-            <p className="texto texto-hober">Quantidade: 1</p>
-            <p className="texto texto-hober">Valor: R$ 1,00</p>
+            <p className="texto texto-hober">Quantidade: {candy.candy0}</p>
+            <p className="texto texto-hober">
+              Valor: R$ {(candy.candy0 * 2).toFixed(2)}
+            </p>
             <Card
               title="Super Troufer"
-              text="Doce chocolate trufado com leite condesado e limão siciliano"
+              text="Chocolate ao leite trufado com leite condesado e limão siciliano"
               price="2,00"
             />
           </div>
 
           <div className="individual-cards__container">
-            <p className="texto texto-hober">Quantidade: 1</p>
-            <p className="texto texto-hober">Valor: R$ 1,00</p>
+            <p className="texto texto-hober">Quantidade: {candy.candy1}</p>
+            <p className="texto texto-hober">
+              Valor: R$ {(candy.candy1 * 3).toFixed(2)}
+            </p>
 
             <Card
               title="Amor Proibido"
@@ -87,8 +105,10 @@ function App() {
           </div>
 
           <div className="individual-cards__container">
-            <p className="texto texto-hober">Quantidade: 1</p>
-            <p className="texto texto-hober">Valor: R$ 1,00</p>
+            <p className="texto texto-hober">Quantidade: {candy.candy2}</p>
+            <p className="texto texto-hober">
+              Valor: R$ {(candy.candy2 * 4.5).toFixed(2)}
+            </p>
             <Card
               title="Rainha dos Doces"
               text="Bolacha com paleta italiana de (morango, limão ou laranja) e mel"
