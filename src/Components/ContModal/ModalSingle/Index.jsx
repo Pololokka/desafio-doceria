@@ -23,6 +23,10 @@ const ModalSingle = ({
   setShowModal2,
   finalModal,
   setCandy,
+  isRandom,
+  randMoney,
+  setRandMoney,
+  handleRandEnd,
 }) => {
   if (!show) {
     return null;
@@ -43,8 +47,12 @@ const ModalSingle = ({
               type={type}
               name={name}
               className="texto input__geral"
-              value={userName || ""}
-              onChange={(event) => setUserName(event.target.value)}
+              value={isRandom ? randMoney || "" : userName || ""}
+              onChange={(event) =>
+                isRandom
+                  ? setRandMoney(event.target.value)
+                  : setUserName(event.target.value)
+              }
             />
           )}
           <p className="texto">{text2}</p>
@@ -84,6 +92,13 @@ const ModalSingle = ({
               }
               onClick={() => {
                 if (userName !== "") {
+                  if (isRandom) {
+                    setCandy({
+                      candy0: Math.floor(randMoney / 2),
+                      candy1: 0,
+                      candy2: 0,
+                    });
+                  }
                   setShow(!show);
                   if (name === "userName") {
                     setShowModal2(true);

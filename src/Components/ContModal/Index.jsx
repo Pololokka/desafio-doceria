@@ -20,6 +20,9 @@ const ContModal = ({
   candy,
   setCandy,
   handleOnChangeCandy,
+  randMoney,
+  setRandMoney,
+  handleRandEnd,
 }) => {
   const [currStep, setCurrStep] = useState(0);
   const modalRef = useRef();
@@ -69,7 +72,7 @@ const ContModal = ({
         inputNeed={true}
         type="text"
         text2='E como gostaria de fazer seu pedido? Caso queira selecionar os doces, aperte em "Escolher"; caso queira uma seleção otimizada para a maior quantidade de doces, aperte em "Randomizar"!'
-        btnValue1="Randomizar"
+        btnValue1="Otimizar"
         btnValue2="Escolher"
         btn2Need={true}
         userName={userName}
@@ -84,7 +87,7 @@ const ContModal = ({
       />
 
       <ModalSingle
-        title="Escolha Randomizada"
+        title="Escolha Otimizada"
         name="random"
         text="Insira quanto dinheiro gostaria de gastar, e a máquina vai escolher seus doces!"
         inputNeed={true}
@@ -94,6 +97,11 @@ const ContModal = ({
         btn2Need={true}
         show={showModalS2}
         setShow={setShowModalS2}
+        setCandy={setCandy}
+        isRandom={true}
+        randMoney={randMoney}
+        setRandMoney={setRandMoney}
+        handleRandEnd={handleRandEnd}
       />
 
       <ModalMulti

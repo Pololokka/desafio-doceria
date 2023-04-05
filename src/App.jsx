@@ -22,6 +22,8 @@ function App() {
 
   const [userName, setUserName] = useState("");
 
+  const [randMoney, setRandMoney] = useState("");
+
   const handleStart = () => {
     setShowModalS(!showModalS);
   };
@@ -38,6 +40,8 @@ function App() {
     const name = event.target.name;
     setCandy({ ...candy, [name]: event.target.value });
   };
+
+  const handleRandEnd = () => {};
 
   let priceTotal = (
     candy.candy2 * 4.5 +
@@ -63,6 +67,10 @@ function App() {
         candy={candy}
         setCandy={setCandy}
         handleOnChangeCandy={handleOnChangeCandy}
+        //lógica doce otimizado
+        randMoney={randMoney}
+        setRandMoney={setRandMoney}
+        handleRandEnd={handleRandEnd}
       />
       <main className="App">
         <h1 className="titulo titulo-hover">Confissões Da Minha Dieta</h1>
