@@ -41,7 +41,13 @@ function App() {
     setCandy({ ...candy, [name]: event.target.value });
   };
 
-  const handleRandEnd = () => {};
+  const handleRandEnd = () => {
+    setCandy({
+      candy0: Math.floor(randMoney / 2),
+      candy1: 0,
+      candy2: 0,
+    });
+  };
 
   let priceTotal = (
     candy.candy2 * 4.5 +

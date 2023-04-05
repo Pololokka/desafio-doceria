@@ -93,11 +93,7 @@ const ModalSingle = ({
               onClick={() => {
                 if (userName !== "") {
                   if (isRandom) {
-                    setCandy({
-                      candy0: Math.floor(randMoney / 2),
-                      candy1: 0,
-                      candy2: 0,
-                    });
+                    handleRandEnd();
                   }
                   setShow(!show);
                   if (name === "userName") {

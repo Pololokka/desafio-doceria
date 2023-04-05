@@ -97,7 +97,6 @@ const ContModal = ({
         btn2Need={true}
         show={showModalS2}
         setShow={setShowModalS2}
-        setCandy={setCandy}
         isRandom={true}
         randMoney={randMoney}
         setRandMoney={setRandMoney}
