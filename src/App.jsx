@@ -24,6 +24,12 @@ function App() {
 
   const [randMoney, setRandMoney] = useState("");
 
+  const candyPrice = {
+    price0: 2,
+    price1: 3,
+    price2: 4.5,
+  };
+
   const handleStart = () => {
     setShowModalS(!showModalS);
   };
@@ -50,16 +56,13 @@ function App() {
     do {
       if (money >= 4.5 && money < 5) {
         thirdC++;
-        money -= 4.5;
-        console.log("primeiro if");
+        money -= candyPrice.price2;
       } else if (money >= 3 && money < 4) {
         secC++;
-        money -= 3;
-        console.log("segundo if");
+        money -= candyPrice.price1;
       } else {
         firstC++;
-        money -= 2;
-        console.log(money);
+        money -= candyPrice.price0;
       }
     } while (money > 2);
 
@@ -71,9 +74,9 @@ function App() {
   };
 
   let priceTotal = (
-    candy.candy2 * 4.5 +
-    candy.candy1 * 3 +
-    candy.candy0 * 2
+    candy.candy2 * candyPrice.price2 +
+    candy.candy1 * candyPrice.price1 +
+    candy.candy0 * candyPrice.price0
   ).toFixed(2);
 
   return (
@@ -118,7 +121,7 @@ function App() {
           <div className="individual-cards__container">
             <p className="texto texto-hober">Quantidade: {candy.candy0}</p>
             <p className="texto texto-hober">
-              Valor: R$ {(candy.candy0 * 2).toFixed(2)}
+              Valor: R$ {(candy.candy0 * candyPrice.price0).toFixed(2)}
             </p>
             <Card
               title="Super Troufer"
@@ -130,7 +133,7 @@ function App() {
           <div className="individual-cards__container">
             <p className="texto texto-hober">Quantidade: {candy.candy1}</p>
             <p className="texto texto-hober">
-              Valor: R$ {(candy.candy1 * 3).toFixed(2)}
+              Valor: R$ {(candy.candy1 * candyPrice.price1).toFixed(2)}
             </p>
 
             <Card
@@ -143,7 +146,7 @@ function App() {
           <div className="individual-cards__container">
             <p className="texto texto-hober">Quantidade: {candy.candy2}</p>
             <p className="texto texto-hober">
-              Valor: R$ {(candy.candy2 * 4.5).toFixed(2)}
+              Valor: R$ {(candy.candy2 * candyPrice.price2).toFixed(2)}
             </p>
             <Card
               title="Rainha dos Doces"
