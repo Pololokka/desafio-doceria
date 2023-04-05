@@ -42,10 +42,31 @@ function App() {
   };
 
   const handleRandEnd = () => {
+    let money = randMoney;
+    let firstC = 0;
+    let secC = 0;
+    let thirdC = 0;
+
+    do {
+      if (money >= 4.5 && money < 5) {
+        thirdC++;
+        money -= 4.5;
+        console.log("primeiro if");
+      } else if (money >= 3 && money < 4) {
+        secC++;
+        money -= 3;
+        console.log("segundo if");
+      } else {
+        firstC++;
+        money -= 2;
+        console.log(money);
+      }
+    } while (money > 2);
+
     setCandy({
-      candy0: Math.floor(randMoney / 2),
-      candy1: 0,
-      candy2: 0,
+      candy0: firstC,
+      candy1: secC,
+      candy2: thirdC,
     });
   };
 
