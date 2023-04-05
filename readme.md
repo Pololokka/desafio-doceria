@@ -2,7 +2,7 @@
 
 # Doceria
 
-Doceria
+Página de pedidos de doces.
 
 ## Tecnologias
 
@@ -15,7 +15,9 @@ Doceria
 
 ### Home
 
-Página onde o usuário realiza suas interações
+Página onde o usuário pode realizar um pedido, concluir um pedido, ou limpar o carrinho. A parte de "Fazer Pedido" possui dois fluxos distintos, um onde o usuário pode escolher seus doces, e outro onde o usuário introduz a quantia que quer gastar, e o sistema gera um pedido otimizado para quantidade de doces.
+
+O primeiro modal de pedido possui um sistema simples de validação, onde, caso o usuário introduza nada, não é possível seguir com qualquer fluxo(isso é indicado pelas cores dos botões).
 
 ## Sobre
 
